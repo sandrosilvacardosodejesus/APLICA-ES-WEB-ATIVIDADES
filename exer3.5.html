@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca de Tecnologias</title>
+</head>
+<body>
+
+    <h2>Lista de Tecnologias</h2>
+
+    <input type="text" id="busca"
+           placeholder="Buscar tecnologia..."
+           oninput="filtrarTecnologias()">
+
+    <ul id="listaTecnologias">
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PHP</li>
+        <li>Java</li>
+    </ul>
+
+    <script>
+        function filtrarTecnologias() {
+
+            // Capturar o texto digitado
+            const busca = document.getElementById("busca").value.toLowerCase();
+
+            // Selecionar todos os itens da lista
+            const tecnologias = document.querySelectorAll("#listaTecnologias li");
+
+            // Percorrer a lista
+            for (let i = 0; i < tecnologias.length; i++) {
+
+                // Converter o texto para minúsculas
+                const texto = tecnologias[i].textContent.toLowerCase();
+
+                // Verificar se contém o termo buscado
+                if (texto.includes(busca)) {
+                    tecnologias[i].style.display = "block";
+                } else {
+                    tecnologias[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

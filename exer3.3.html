@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas</title>
+</head>
+<body>
+    <h2>Lista De Tarefas</h2>
+
+ <input type = "text" id="campoTarefa" placeholder="Digite uma tarefa">
+
+<!--Botão Adicionar Tarefa-->
+<button onclick ="AdicionarTarefa()">Adicionar Tarefa</button>
+
+<!--Lista onde as tarefas vai aparecer-->
+<ul id="minhasTarefas"></ul>  
+</body>
+<script>
+    //Array onde vai armazenar as tarefas da lista
+    let listaDeTarefas=[];
+    // Função chamada pelo Botão
+    function AdicionarTarefa(){
+        // Pegar o texto digitado no Input
+        let tarefa = document.getElementById("campoTarefa").value;
+        // Inserir no Array o texto 
+        listaDeTarefas.push(tarefa);
+        //Limpar o campo de texto
+        document.getElementById("campoTarefa").value = "";
+        //Função responsável por atualizar a lista
+         atualizarLista();
+    }
+    function atualizarLista(){
+        // limpar o conteúdo da lista
+        document.getElementById("minhasTarefas").innerHTML = "";
+        // Percorrer o Array
+        for (let i =0; i<listaDeTarefas.length; i ++){
+            // Adicionar item na lista que corresponde ao Array
+            document.getElementById("minhasTarefas").innerHTML += "<li>"+ listaDeTarefas[i] + "</li>";
+        }
+    }
+     
+</script>
+</html> 

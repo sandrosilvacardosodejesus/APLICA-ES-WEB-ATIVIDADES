@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Média</title>
+</head>
+<body>
+    <h2> Calculadora de Média</h2>
+    <label>Nota1:</label>
+     <input type="number" id="nota1" placeholder="Digite a sua nota 1">
+     <br><br>
+     <label>Nota1:</label>
+     <input type="number" id="nota2" placeholder="Digite a sua nota 2">
+     <br><br>
+
+     <!--Botão-->
+     <button onclick ="verificarMedia()">Calcular Média</button>
+     <p id="resultadoCalculo"></p>
+     <script>
+        // Função que calcula a média e retorna a média
+        function calcularMedia(n1,n2){
+            return (n1 + n2) / 2;
+        }
+        
+            // Função chamada pelo botão
+            function verificarMedia(){
+            let n1 = Number(document.getElementById("nota1").value);
+            let n2 = Number(document.getElementById("nota2").value);
+            
+            
+            // Chamar a função calcular média 
+            let media = calcularMedia (n1,n2);
+            // Pegar o valor onde o resultado será exibido
+            let resultado = document.getElementById("resultadoCalculo");
+            // Verificar o status da média do aluno 
+            if ( media >= 7.0){
+                resultado.textContent = "Média" + media + "- Aprovado";
+                resultado.style.color = "green";
+            
+            }else{
+                    resultado.textContent = "Média" + media + "- Recuperação";
+                    resultado.style.color = "red";
+                }
+            }
+     </script>
+        
+    
+</body>
+</html>
