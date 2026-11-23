@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação</title>
+</head>
+<body>
+    <h2>Digite seu nome</h2>
+   <input type="text" id="campoNome" placeholder="Digite seu nome">
+    <!--Botão-->
+    <button onclick="Saudar()">Enviar</button>
+    <p id="mensagem"></p>
+</body>
+    <script>
+        //Função que recebe o nome e constrói a mensagem
+        function construirSaudacao(nome){
+          return"Olá, "+ nome + "! Seja bem-vindo ao curso de Web!";
+        } 
+        // Função chamada pelo botão 
+        function Saudar(){
+            let nome = document.getElementById("campoNome").value;
+            // Chamar a Função e guardar o resultado
+            let saudacao = construirSaudacao(nome);
+            // Exibe mensagem dentro do parágrafo
+            document.getElementById("mensagem").textContent = saudacao;
+
+        }
+    </script>
+    
+</body>
+</html>
